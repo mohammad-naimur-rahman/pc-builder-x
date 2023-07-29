@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
-import categories from '@/data/category.json'
+import { categories } from '@/data/categories'
 
 export default function Navbar() {
   return (
-    <div className='navbar bg-base-100 w-full fixed top-0 left-0 h-20 px-0 lg:px-10'>
+    <div className='navbar bg-base-100 w-full fixed top-0 left-0 h-20 px-0 lg:px-10 z-10'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -27,7 +27,7 @@ export default function Navbar() {
             <li>
               <a>Category</a>
               <ul className='p-2'>
-                {categories.map(({ id, label, value }) => (
+                {categories?.map(({ id, label, value }) => (
                   <li key={id}>
                     <Link href={`/products/${value}`}>{label}</Link>
                   </li>

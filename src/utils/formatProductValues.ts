@@ -1,7 +1,7 @@
-import categories from '@/data/category.json'
+import { categories } from '@/data/categories'
 
 export const formatCategory = (param: string): string => {
-  const category = categories.find(item => item.value === param)
+  const category = categories?.find(item => item.value === param)
   return category?.label || ''
 }
 

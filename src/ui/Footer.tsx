@@ -1,5 +1,5 @@
 import React from 'react'
-import categories from '@/data/category.json'
+import { categories } from '@/data/categories'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className='footer p-10 justify-evenly'>
         <div>
           <span className='footer-title'>Categories</span>
-          {categories.map(({ id, label, value }) => (
+          {categories?.map(({ id, label, value }) => (
             <Link href={`/products/${value}`} key={id} className='link link-hover'>
               {label}
             </Link>

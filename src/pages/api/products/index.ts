@@ -5,14 +5,19 @@ import { IResponse } from '@/server/types/ResponseType'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { method } = req
+  const { method, query } = req
 
   await dbConnect()
 
   switch (method) {
     case 'GET':
       try {
-        const allProducts = await Product.find()
+        let findQuery = {}
+        if (query?.category) {
+          findQuery = { category: query.category }
+        }
+        console.log(findQuery)
+        const allProducts = await Product.find(findQuery)
         if (!allProducts) {
           throw new Error('Products retrieve failed')
         }

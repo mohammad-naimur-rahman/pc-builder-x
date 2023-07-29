@@ -3,13 +3,8 @@ import { IProduct } from '@/server/modules/products/products.interface'
 import { Product } from '@/server/modules/products/products.model'
 import { IResponse } from '@/server/types/ResponseType'
 import { NextApiRequest, NextApiResponse } from 'next'
-import categories from '@/data/category.json'
-
-interface ICategory {
-  id: number
-  label: string
-  value: string
-}
+import { categories } from '@/data/categories'
+import { ICategory } from '@/types/globalTypes'
 
 function getCategoryNames(randomCategoryIds: number[], categoryJSON: ICategory[]): string[] {
   const categoryNames: string[] = []

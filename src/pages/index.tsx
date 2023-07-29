@@ -6,6 +6,7 @@ import { API_URL } from '@/configs'
 import FeaturedProducts from '@/components/Homepage/FeaturedProducts'
 import { IProduct } from '@/server/modules/products/products.interface'
 import axios from 'axios'
+import FeaturesCategories from '@/components/Homepage/FeaturesCategories'
 
 interface Props {
   products: Array<IProduct>
@@ -16,6 +17,7 @@ const HomePage: NextPageWithLayout<Props> = ({ products }) => {
     <>
       <Header />
       <FeaturedProducts products={products} />
+      <FeaturesCategories />
     </>
   )
 }
