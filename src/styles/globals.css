@@ -5,3 +5,7 @@
 .h-min-body {
   min-height: calc(100dvh - 80px);
 }
+
+.w-max-content {
+  width: max-content;
+}

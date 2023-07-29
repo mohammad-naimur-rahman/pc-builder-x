@@ -5,8 +5,8 @@ interface Props {
   alt: string
   width?: number
   height?: number
-  sizes: string
-  className: string
+  sizes?: string
+  className?: string
 }
 
 const Img = ({ src, alt, width = 500, height = 500, sizes = '40vw', className, ...rest }: Props) => {

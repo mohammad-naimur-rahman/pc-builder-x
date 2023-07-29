@@ -7,6 +7,7 @@ interface IReview {
 }
 
 export interface IProduct {
+  _id?: string
   image: string
   name: string
   category: 'cpu' | 'motherboard' | 'ram' | 'psu' | 'storage' | 'monitor' | 'others'
