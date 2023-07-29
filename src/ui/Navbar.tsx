@@ -1,8 +1,10 @@
+import Link from 'next/link'
 import React from 'react'
+import categories from '@/data/category.json'
 
 export default function Navbar() {
   return (
-    <div className='navbar bg-base-100 w-full fixed top-0 left-0 h-20'>
+    <div className='navbar bg-base-100 w-full fixed top-0 left-0 h-20 px-0 lg:px-10'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -17,51 +19,53 @@ export default function Navbar() {
           </label>
           <ul tabIndex={0} className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'>
             <li>
-              <a>Item 1</a>
+              <Link href='/'>Homepage</Link>
             </li>
             <li>
-              <a>Parent</a>
+              <Link href='/all-products'>All Products</Link>
+            </li>
+            <li>
+              <a>Category</a>
               <ul className='p-2'>
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
+                {categories.map(({ id, label, value }) => (
+                  <li key={id}>
+                    <Link href={`/products/${value}`}>{label}</Link>
+                  </li>
+                ))}
               </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
             </li>
           </ul>
         </div>
-        <a className='btn btn-ghost normal-case text-xl'>daisyUI</a>
+        <Link href='/' className='btn btn-ghost normal-case text-2xl text-primary italic'>
+          PC Builder
+        </Link>
       </div>
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal px-1'>
           <li>
-            <a>Item 1</a>
+            <Link href='/'>Homepage</Link>
+          </li>
+          <li>
+            <Link href='/all-products'>All Products</Link>
           </li>
           <li tabIndex={0}>
             <details>
-              <summary>Parent</summary>
+              <summary>Category</summary>
               <ul className='p-2'>
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
+                {categories.map(({ id, label, value }) => (
+                  <li key={id}>
+                    <Link href={`/products/${value}`}>{label}</Link>
+                  </li>
+                ))}
               </ul>
             </details>
-          </li>
-          <li>
-            <a>Item 3</a>
           </li>
         </ul>
       </div>
       <div className='navbar-end'>
-        <a className='btn'>Button</a>
+        <Link href='/pc-builder' className='btn btn-'>
+          Build PC
+        </Link>
       </div>
     </div>
   )

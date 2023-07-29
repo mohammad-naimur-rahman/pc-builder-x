@@ -16,7 +16,7 @@ const Layout = ({ title, children }: Props) => {
       </Head>
       <div>
         <Navbar />
-        <main className='min-h-[calc(100dvh_-_80px)] mt-20'>{children}</main>
+        <main className='h-min-body mt-20 container'>{children}</main>
         <Footer />
       </div>
     </>
