@@ -1,8 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import { categories } from '@/data/categories'
+import { useSession, signOut } from 'next-auth/react'
 
 export default function Navbar() {
+  const { data: session } = useSession()
+
+  const signOutUser = () => {
+    signOut()
+  }
   return (
     <div className='navbar bg-base-100 w-full fixed top-0 left-0 h-20 px-0 lg:px-10 z-10'>
       <div className='navbar-start'>
@@ -34,6 +40,15 @@ export default function Navbar() {
                 ))}
               </ul>
             </li>
+            {session?.user?.email ? (
+              <li className='link link-hover' onClick={signOutUser}>
+                <a>Logout</a>
+              </li>
+            ) : (
+              <li>
+                <Link href='/login'>Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <Link href='/' className='btn btn-ghost normal-case text-2xl text-primary italic'>
@@ -60,6 +75,15 @@ export default function Navbar() {
               </ul>
             </details>
           </li>
+          {session?.user?.email ? (
+            <li onClick={signOutUser}>
+              <a>Logout</a>
+            </li>
+          ) : (
+            <li>
+              <Link href='/login'>Login</Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className='navbar-end'>

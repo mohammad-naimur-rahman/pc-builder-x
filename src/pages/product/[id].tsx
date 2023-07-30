@@ -12,7 +12,6 @@ interface Props {
 }
 
 export default function ProductDetailsPage({ product }: Props) {
-  console.log(product)
   return (
     <section className='py-10'>
       <ProductHeader product={product} />
