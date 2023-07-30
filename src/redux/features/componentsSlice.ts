@@ -24,30 +24,6 @@ const componentsSlice = createSlice({
     addToComponentsList: (state, action: PayloadAction<IProduct>) => {
       state.components.push({ category: action.payload.category, component: action.payload })
       state.totalPrice += action.payload.price
-
-      // const isSameComponent = state.components.find(
-      //   comp => comp.category === action.payload.category && comp.component._id === action.payload._id
-      // )
-      // const isExist = state.components.find(comp => comp.category === action.payload.category)
-
-      // if (isSameComponent) {
-      //   toast.error('Component already exists!')
-      // } else if (isExist) {
-      //   state.totalPrice -= isExist.component.price
-      //   state.totalPrice += action.payload.price
-      //   const updatedList = state.components.map(comp => {
-      //     if (comp.component._id === action.payload._id) {
-      //       return { ...comp, component: action.payload }
-      //     }
-      //     return comp
-      //   })
-      //   state.components = updatedList
-      //   toast.success('Component replaced!')
-      // } else {
-      //   toast.success('Component added!')
-      //   state.components.push({ category: action.payload.category, component: action.payload })
-      //   state.totalPrice += Number(action.payload.price)
-      // }
     },
 
     removeFromComponentsList: (state, action: PayloadAction<IProduct>) => {

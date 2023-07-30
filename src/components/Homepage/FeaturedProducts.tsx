@@ -12,7 +12,7 @@ export default function FeaturedProducts({ products }: Props) {
     <section className='py-20'>
       <Heading title='Featured Products' subtitle='Check out our featured products' />
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-        {products.map(product => (
+        {products?.map(product => (
           <ProductCard key={product._id} product={product} />
         ))}
       </div>

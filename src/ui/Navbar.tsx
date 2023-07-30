@@ -67,7 +67,7 @@ export default function Navbar() {
             <details>
               <summary>Category</summary>
               <ul className='p-2'>
-                {categories.map(({ id, label, value }) => (
+                {categories?.map(({ id, label, value }) => (
                   <li key={id}>
                     <Link href={`/products/${value}`}>{label}</Link>
                   </li>

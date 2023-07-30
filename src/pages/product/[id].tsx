@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 
   return {
     paths: allPaths,
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -44,7 +44,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   const product = productsData?.data?.data
   return {
     props: {
-      product,
+      product: product || null,
     },
     revalidate: 30,
   }

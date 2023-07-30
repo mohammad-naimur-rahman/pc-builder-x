@@ -19,7 +19,7 @@ export default function PcBuilderPage() {
       <Heading title='PC Builder' subtitle='Build your dream PC now!' />
       <div className='max-w-[1200px] mx-auto'>
         <div className='flex flex-col'>
-          {categories.map(category => (
+          {categories?.map(category => (
             <ChooseCard key={category.id} category={category} components={components} />
           ))}
         </div>

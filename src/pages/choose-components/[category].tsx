@@ -18,7 +18,7 @@ export default function CategoryPage({ products, category }: Props) {
     <section className='py-10'>
       <Heading title={formatCategory(category)} subtitle='Choose your desired product for building your PC' />
       <div className='flex flex-col gap-5'>
-        {products.map(product => (
+        {products?.map(product => (
           <ChooseComponentCard key={product._id} product={product} />
         ))}
       </div>

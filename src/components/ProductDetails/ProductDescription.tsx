@@ -6,16 +6,15 @@ interface Props {
 }
 
 export default function ProductDescription({ product }: Props) {
-  const { name, reviews, description } = { ...product }
   return (
     <section id='details' className='p-5'>
-      <h2 className='text-2xl md:text-3xl text-primary pb-5'>Product description for {name}</h2>
-      <h3 className='text-lg md:text-xl leading-relaxed md:leading-loose md:text-justify'>{description}</h3>
+      <h2 className='text-2xl md:text-3xl text-primary pb-5'>Product description for {product?.name}</h2>
+      <h3 className='text-lg md:text-xl leading-relaxed md:leading-loose md:text-justify'>{product?.description}</h3>
 
       <h4 className='text-2xl md:text-4xl pt-10 pb-5'>Reviews</h4>
-      {reviews ? (
+      {product?.reviews ? (
         <ul>
-          {reviews?.map(review => (
+          {product?.reviews?.map(review => (
             <li key={review?.review} className='flex flex-col gap-1 pb-5'>
               <div className='flex gap-10'>
                 <span className='text-xl'>{review?.name}</span>

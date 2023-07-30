@@ -19,7 +19,7 @@ export default function CategoryPage({ products, category }: Props) {
     <section className='py-10'>
       <Heading title={formatCategory(category)} subtitle='Choose your desired product from featured categories' />
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-        {products.map(product => (
+        {products?.map(product => (
           <ProductCard key={product._id} product={product} />
         ))}
       </div>
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 
   return {
     paths: categoriesData,
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -49,7 +49,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   const products = productsData?.data?.data
   return {
     props: {
-      products,
+      products: products || null,
       category: params?.category,
     },
     revalidate: 30,
