@@ -16,7 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (query?.category) {
           findQuery = { category: query.category }
         }
-        console.log(findQuery)
         const allProducts = await Product.find(findQuery)
         if (!allProducts) {
           throw new Error('Products retrieve failed')

@@ -13,3 +13,8 @@ export const formatCurrency = (param: number): string => {
   const formattedValueInEnglish = formatValue.replace('BDT', '৳')
   return formattedValueInEnglish
 }
+
+export const formatObjKey = (param: string): string => {
+  const capitalized = param.charAt(0).toUpperCase() + param.slice(1)
+  return capitalized
+}
