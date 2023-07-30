@@ -23,7 +23,7 @@ const HomePage: NextPageWithLayout<Props> = ({ products }) => {
 }
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title='PC Builder | Homepage'>{page}</Layout>
+  return <Layout title='PC Builder X | Homepage'>{page}</Layout>
 }
 
 export async function getStaticProps() {

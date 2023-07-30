@@ -63,7 +63,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className='navbar-end'>
-        <Link href='/pc-builder' className='btn btn-'>
+        <Link href='/pc-builder' className='btn btn-primary'>
           Build PC
         </Link>
       </div>

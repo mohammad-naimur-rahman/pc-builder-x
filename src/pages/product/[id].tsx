@@ -22,7 +22,7 @@ export default function ProductDetailsPage({ product }: Props) {
 }
 
 ProductDetailsPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title='Product Details | Homepage'>{page}</Layout>
+  return <Layout title='Product Details | PC Builder X'>{page}</Layout>
 }
 
 export async function getStaticPaths() {
