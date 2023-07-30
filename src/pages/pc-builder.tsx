@@ -7,15 +7,6 @@ import { formatCurrency } from '@/utils/formatProductValues'
 import React, { ReactElement } from 'react'
 import { toast } from 'react-hot-toast'
 
-// interface Products {
-//   category: string
-//   products: Array<IProduct>
-// }
-
-// interface Props {
-//   productsByCategory: Array<Products>
-// }
-
 export default function PcBuilderPage() {
   const { components, totalPrice } = useAppSelector(state => state.components)
 
@@ -24,7 +15,7 @@ export default function PcBuilderPage() {
   }
 
   return (
-    <main className='py-10'>
+    <main className='py-10 px-5'>
       <Heading title='PC Builder' subtitle='Build your dream PC now!' />
       <div className='max-w-[1200px] mx-auto'>
         <div className='flex flex-col'>
@@ -50,26 +41,3 @@ export default function PcBuilderPage() {
 PcBuilderPage.getLayout = function getLayout(page: ReactElement) {
   return <Layout title='PC Builder | PC Builder X'>{page}</Layout>
 }
-
-// export async function getServerSideProps() {
-//   const promises = categories.map(async category => {
-//     const response = await axios.get(`${API_URL}/products?category=${category.value}`)
-//     return { category: category.label, products: response?.data?.data }
-//   })
-
-//   try {
-//     const productsByCategory = await Promise.all(promises)
-//     return {
-//       props: {
-//         productsByCategory,
-//       },
-//     }
-//   } catch (error) {
-//     console.error('Error fetching data:', error)
-//     return {
-//       props: {
-//         productsByCategory: [],
-//       },
-//     }
-//   }
-// }

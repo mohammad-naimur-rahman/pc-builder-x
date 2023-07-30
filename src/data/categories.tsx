@@ -1,7 +1,6 @@
 import { ICategory } from '@/types/globalTypes'
-import { BsFillCpuFill, BsMotherboard, BsPower } from 'react-icons/bs'
+import { BsFillCpuFill, BsFillDatabaseFill, BsMotherboard, BsPower } from 'react-icons/bs'
 import { CgSmartphoneRam } from 'react-icons/cg'
-import { GrStorage } from 'react-icons/gr'
 import { PiMonitor } from 'react-icons/pi'
 import { GiComputerFan } from 'react-icons/gi'
 
@@ -34,7 +33,7 @@ export const categories: Array<ICategory> = [
     id: 5,
     label: 'Storage',
     value: 'storage',
-    icon: <GrStorage />,
+    icon: <BsFillDatabaseFill />,
   },
   {
     id: 6,

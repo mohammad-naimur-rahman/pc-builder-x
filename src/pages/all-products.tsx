@@ -1,8 +1,8 @@
-import FeaturedProductCard from '@/components/Homepage/FeaturedProductCard'
 import { API_URL } from '@/configs'
 import { IProduct } from '@/server/modules/products/products.interface'
 import Heading from '@/ui/Heading'
 import Layout from '@/ui/Layout'
+import ProductCard from '@/ui/ProductCard'
 import axios from 'axios'
 import React, { ReactElement } from 'react'
 
@@ -14,9 +14,9 @@ export default function AllProductsPage({ products }: Props) {
   return (
     <section className='py-20'>
       <Heading title='All Products' subtitle='Check out our products' />
-      <div className='grid grid-cols-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         {products?.map(product => (
-          <FeaturedProductCard key={product._id} product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
       </div>
     </section>

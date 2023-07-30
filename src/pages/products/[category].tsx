@@ -1,9 +1,9 @@
-import CategoryProductCard from '@/components/Categories/CategoryProductCard'
 import { API_URL } from '@/configs'
 import { categories } from '@/data/categories'
 import { IProduct } from '@/server/modules/products/products.interface'
 import Heading from '@/ui/Heading'
 import Layout from '@/ui/Layout'
+import ProductCard from '@/ui/ProductCard'
 import { formatCategory } from '@/utils/formatProductValues'
 import axios from 'axios'
 import { GetStaticPropsContext } from 'next'
@@ -18,9 +18,9 @@ export default function CategoryPage({ products, category }: Props) {
   return (
     <section className='py-10'>
       <Heading title={formatCategory(category)} subtitle='Choose your desired product from featured categories' />
-      <div className='grid grid-cols-3'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
         {products.map(product => (
-          <CategoryProductCard key={product._id} product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
       </div>
     </section>

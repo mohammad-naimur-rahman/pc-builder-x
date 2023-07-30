@@ -22,8 +22,8 @@ export default function ChooseComponentCard({ product }: Props) {
 
   return (
     <div className='p-2'>
-      <div className='shadow-xl rounded-md flex items-center p-3 gap-10 justify-between'>
-        <div className='flex items-center gap-6'>
+      <div className='shadow-xl rounded-md flex flex-col md:flex-row items-center p-3 gap-10 justify-between'>
+        <div className='flex flex-col sm:flex-row items-center gap-6'>
           <Img src={product?.image} alt={product?.name} className='max-w-[250px] h-auto' />
           <div className='flex flex-col gap-2'>
             <h4 className='text-primary text-xl font-medium'>{product?.name}</h4>

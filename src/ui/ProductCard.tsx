@@ -9,14 +9,14 @@ interface Props {
   product: IProduct
 }
 
-export default function CategoryProductCard({ product }: Props) {
+export default function ProductCard({ product }: Props) {
   return (
     <div className='p-2'>
       <div className='shadow-xl h-full rounded-md relative'>
         <Img src={product?.image} alt={product?.name} />
         <div className='p-5'>
           <div className='flex justify-between items-center'>
-            <h4 className='text-primary text-xl font-medium'>{product?.name}</h4>
+            <h4 className='text-primary text-base md:text-lg lg:text-xl font-medium'>{product?.name}</h4>
             <p className='w-max-content ml-3'>{product?.status}</p>
           </div>
           <div className='flex justify-between items-center py-6'>

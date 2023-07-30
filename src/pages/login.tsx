@@ -35,7 +35,7 @@ const LoginPage = () => {
           <BsGoogle className='ml-2 mt-1' />
         </p>
         <p
-          className='flex items-center cursor-pointer px-10 py-3 border-[1px] border-current rounded-full text-gray-600 hover:bg-gray-600 hover:text-white hover:border-white transition-colors'
+          className='flex items-center cursor-pointer px-10 py-3 border-[1px] border-current rounded-full text-gray-400 hover:bg-gray-400 hover:text-white hover:border-white transition-colors'
           onClick={onGithubLogin}>
           Login with Github
           <BsGithub className='ml-2 mt-1' />

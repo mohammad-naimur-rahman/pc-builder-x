@@ -1,7 +1,5 @@
-import CategoryProductCard from '@/components/Categories/CategoryProductCard'
 import ChooseComponentCard from '@/components/ChooseComponents/ChooseComponentCard'
 import { API_URL } from '@/configs'
-import { categories } from '@/data/categories'
 import { IProduct } from '@/server/modules/products/products.interface'
 import Heading from '@/ui/Heading'
 import Layout from '@/ui/Layout'

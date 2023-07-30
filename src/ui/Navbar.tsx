@@ -51,7 +51,7 @@ export default function Navbar() {
             )}
           </ul>
         </div>
-        <Link href='/' className='btn btn-ghost normal-case text-2xl text-primary italic'>
+        <Link href='/' className='btn btn-ghost normal-case text-xl sm:text-2xl text-primary italic'>
           PC Builder X
         </Link>
       </div>
