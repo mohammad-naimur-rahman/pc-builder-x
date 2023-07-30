@@ -1,15 +1,37 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+PC Builder X is an pc building application where you can choose your own components and build your dream pc
+
+Live link: https://pc-builder-x.vercel.app/
+
+#### Features
+
+- Fullstack dynamic application
+- TypeScript for safe type definition
+- Next auth for google and github authentication
+- Redux toolkit for global state management
+- Daisy UI and Tailwind CSS for optimized styling
+
 ## Getting Started
 
-First, run the development server:
+First, clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/mohammad-naimur-rahman/pc-builder-x
+```
+
+Install the dependencies
+
+```bash
+pnpm install
+```
+
+Give neccessary environment variables in `.env.local` file (Follow `.env.example`)
+
+Run the development server:
+
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
