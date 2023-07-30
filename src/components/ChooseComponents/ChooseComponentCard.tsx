@@ -1,7 +1,9 @@
+import { addToComponentsList } from '@/redux/features/componentsSlice'
+import { useAppDispatch } from '@/redux/hooks'
 import { IProduct } from '@/server/modules/products/products.interface'
 import Img from '@/ui/Img'
 import { formatCategory, formatCurrency } from '@/utils/formatProductValues'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { BsFillStarFill } from 'react-icons/bs'
 
@@ -10,6 +12,14 @@ interface Props {
 }
 
 export default function ChooseComponentCard({ product }: Props) {
+  const { push } = useRouter()
+  const dispatch = useAppDispatch()
+
+  const chooseProduct = () => {
+    dispatch(addToComponentsList(product))
+    push('/pc-builder')
+  }
+
   return (
     <div className='p-2'>
       <div className='shadow-xl rounded-md flex items-center p-3 gap-10 justify-between'>
@@ -28,8 +38,8 @@ export default function ChooseComponentCard({ product }: Props) {
         </div>
         <div className='flex flex-col gap-3 items-center'>
           <p className='text-xl'>{formatCurrency(product?.price)}</p>
-          <button className='btn btn-primary px-10' onClick={() => {}}>
-            Choose
+          <button className='btn btn-primary px-10' onClick={chooseProduct}>
+            Add to builder
           </button>
         </div>
       </div>

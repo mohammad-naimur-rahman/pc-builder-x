@@ -18,7 +18,7 @@ interface Props {
 export default function CategoryPage({ products, category }: Props) {
   return (
     <section className='py-10'>
-      <Heading title={formatCategory(category)} subtitle='Choose your desired product from featured categories' />
+      <Heading title={formatCategory(category)} subtitle='Choose your desired product for building your PC' />
       <div className='flex flex-col gap-5'>
         {products.map(product => (
           <ChooseComponentCard key={product._id} product={product} />
@@ -32,20 +32,7 @@ CategoryPage.getLayout = function getLayout(page: ReactElement) {
   return <Layout title='Category | PC Builder X'>{page}</Layout>
 }
 
-export async function getStaticPaths() {
-  const categoriesData = categories?.map(category => ({
-    params: {
-      category: category?.value,
-    },
-  }))
-
-  return {
-    paths: categoriesData,
-    fallback: true,
-  }
-}
-
-export async function getStaticProps({ params }: GetStaticPropsContext) {
+export async function getServerSideProps({ params }: GetStaticPropsContext) {
   const productsData = await axios.get(`${API_URL}/products?category=${params?.category}`)
   const products = productsData?.data?.data
   return {
@@ -53,6 +40,5 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       products,
       category: params?.category,
     },
-    revalidate: 30,
   }
 }
